@@ -1,17 +1,19 @@
-import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
-function Navbar(){
-    return(
-        <nav className='bg-blue-600 text-white px-4 py-6 flex justify-between'>
-            <div className='text-xl font-bold'>TASKMANAGER</div>
-            <div className='space-x-4'>
-                <Link to='/'className='hover:underline'>HOME</Link>
-                <Link to='/about'className='hover:underline'>ABOUT</Link>
-            </div>
+const Navbar = () => {
+  const { darkMode, setDarkMode } = useTheme();
 
-        </nav>
-    );
-
-}
+  return (
+    <nav className="flex justify-between items-center p-4 bg-white dark:bg-gray-800 shadow">
+      <h1 className="text-xl font-bold text-gray-800 dark:text-white">Task Manager</h1>
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 text-sm transition-all hover:bg-gray-300 dark:hover:bg-gray-600"
+      >
+        {darkMode ? '☀ Light' : '🌙 Dark'}
+      </button>
+    </nav>
+  );
+};
 
 export default Navbar;

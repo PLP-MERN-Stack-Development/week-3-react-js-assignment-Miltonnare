@@ -1,6 +1,6 @@
-import { use, useState } from "react";
+import { useState } from "react";
 
-function TaskForm(){
+function TaskForm({ onAdd }){
     const [text, setText]=useState('');
 
     const handleSubmit=(e)=>{
@@ -16,7 +16,7 @@ function TaskForm(){
           placeholder="Enter the task"
           required="true"
           value={text}
-          onchange={
+          onChange={
             (e)=>setText(e.target.value)
 
           }

@@ -26,7 +26,7 @@ function TaskManager() {
   });
 
   return (
-    <div className="max-w-md mx-auto p-4">
+    <div className="max-w-md mx-auto p-4 bg-gray-50 dark:bg-gray-800 rounded shadow text-gray-900 dark:text-gray-100">
       <TaskForm onAdd={addTask} />
       
       <div className="flex gap-2 my-4 justify-center">
@@ -34,7 +34,7 @@ function TaskManager() {
           <button
             key={f}
             onClick={() => setFilter(f)}
-            className={`px-3 py-1 rounded ${filter === f ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+            className={`px-3 py-1 rounded ${filter === f ? 'bg-blue-500 text-white' : 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200'}`}
           >
             {f.charAt(0).toUpperCase() + f.slice(1)}
           </button>

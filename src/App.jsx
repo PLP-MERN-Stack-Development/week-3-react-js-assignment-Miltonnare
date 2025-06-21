@@ -17,6 +17,12 @@ function App() {
       </Card>
 
       <div className="mt-8">
+        <Card title="Task Management">
+          <TaskManager />
+        </Card>
+      </div>
+
+      <div className="mt-8">
         <Posts /> {/*  Displaying fetched API data with search and pagination */}
       </div>
     </Layout>
